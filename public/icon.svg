@@ -1,0 +1,112 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Sky gradient (realistic sky colors) -->
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB"/>
+      <stop offset="40%" style="stop-color:#B0E0E6"/>
+      <stop offset="100%" style="stop-color:#4682B4"/>
+    </linearGradient>
+    
+    <!-- Sun gradient (realistic sun) -->
+    <radialGradient id="realisticSun" cx="0.3" cy="0.3" r="0.8">
+      <stop offset="0%" style="stop-color:#FFFACD"/>
+      <stop offset="30%" style="stop-color:#FFD700"/>
+      <stop offset="70%" style="stop-color:#FFA500"/>
+      <stop offset="100%" style="stop-color:#FF8C00"/>
+    </radialGradient>
+    
+    <!-- Realistic cloud gradient -->
+    <radialGradient id="realisticCloud" cx="0.2" cy="0.2" r="1.2">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="50%" style="stop-color:#F8F8FF"/>
+      <stop offset="80%" style="stop-color:#E6E6FA"/>
+      <stop offset="100%" style="stop-color:#D3D3D3"/>
+    </radialGradient>
+    
+    <!-- Rain cloud gradient -->
+    <radialGradient id="rainCloud" cx="0.2" cy="0.2" r="1.2">
+      <stop offset="0%" style="stop-color:#F0F0F0"/>
+      <stop offset="50%" style="stop-color:#D3D3D3"/>
+      <stop offset="100%" style="stop-color:#A9A9A9"/>
+    </radialGradient>
+    
+    <!-- Shadow and depth filters -->
+    <filter id="softShadow" x="-50%" y="-50%" width="300%" height="300%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="3" result="offset"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+    
+    <filter id="innerGlow" x="-50%" y="-50%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- App icon background with rounded corners -->
+  <rect x="5" y="5" width="110" height="110" rx="25" ry="25" fill="url(#skyGradient)" stroke="#2F4F4F" stroke-width="1"/>
+  
+  <!-- Realistic sun with glow effect -->
+  <circle cx="35" cy="30" r="18" fill="url(#realisticSun)" filter="url(#innerGlow)"/>
+  
+  <!-- Sun corona/glow -->
+  <circle cx="35" cy="30" r="22" fill="none" stroke="#FFD700" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- Realistic cloud formation (cumulus-style) -->
+  <g filter="url(#softShadow)">
+    <!-- Main cloud body -->
+    <ellipse cx="45" cy="55" rx="12" ry="8" fill="url(#realisticCloud)"/>
+    <ellipse cx="58" cy="52" rx="15" ry="10" fill="url(#realisticCloud)"/>
+    <ellipse cx="72" cy="56" rx="13" ry="9" fill="url(#realisticCloud)"/>
+    <ellipse cx="85" cy="60" rx="11" ry="7" fill="url(#realisticCloud)"/>
+    
+    <!-- Cloud highlights -->
+    <ellipse cx="45" cy="52" rx="8" ry="5" fill="#FFFFFF" opacity="0.7"/>
+    <ellipse cx="58" cy="49" rx="10" ry="6" fill="#FFFFFF" opacity="0.7"/>
+    <ellipse cx="72" cy="53" rx="9" ry="5" fill="#FFFFFF" opacity="0.7"/>
+  </g>
+  
+  <!-- Rain cloud (darker, more realistic) -->
+  <g filter="url(#softShadow)">
+    <ellipse cx="65" cy="68" rx="20" ry="8" fill="url(#rainCloud)"/>
+    <ellipse cx="75" cy="72" rx="15" ry="6" fill="url(#rainCloud)"/>
+    <ellipse cx="55" cy="72" rx="12" ry="5" fill="url(#rainCloud)"/>
+  </g>
+  
+  <!-- Realistic raindrops with motion blur effect -->
+  <g opacity="0.8">
+    <!-- Large drops -->
+    <ellipse cx="55" cy="82" rx="1.5" ry="6" fill="#4682B4"/>
+    <ellipse cx="65" cy="85" rx="1.5" ry="6" fill="#4169E1"/>
+    <ellipse cx="75" cy="83" rx="1.5" ry="6" fill="#4682B4"/>
+    <ellipse cx="70" cy="90" rx="1.5" ry="6" fill="#1E90FF"/>
+    <ellipse cx="60" cy="92" rx="1.5" ry="6" fill="#4682B4"/>
+    
+    <!-- Medium drops -->
+    <ellipse cx="52" cy="88" rx="1" ry="4" fill="#4682B4" opacity="0.7"/>
+    <ellipse cx="68" cy="87" rx="1" ry="4" fill="#1E90FF" opacity="0.7"/>
+    <ellipse cx="77" cy="89" rx="1" ry="4" fill="#4682B4" opacity="0.7"/>
+    
+    <!-- Small drops for depth -->
+    <ellipse cx="58" cy="95" rx="0.8" ry="3" fill="#4682B4" opacity="0.5"/>
+    <ellipse cx="72" cy="96" rx="0.8" ry="3" fill="#1E90FF" opacity="0.5"/>
+  </g>
+  
+  <!-- Wind effect (subtle curved lines) -->
+  <g stroke="#B0C4DE" stroke-width="1" fill="none" opacity="0.4">
+    <path d="M85 40 Q95 42 90 45 Q85 48 95 50"/>
+    <path d="M90 48 Q98 50 93 52"/>
+  </g>
+  
+  <!-- Ground/horizon line for realism -->
+  <ellipse cx="60" cy="105" rx="50" ry="3" fill="#228B22" opacity="0.3"/>
+</svg>
