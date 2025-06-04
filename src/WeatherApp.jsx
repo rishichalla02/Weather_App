@@ -97,7 +97,7 @@ const WeatherApp = () => {
                 <img
                     src={mySun}
                     alt="Weather Icon"
-                    className="w-32 h-32 object-contain rounded-full shadow-2xl border-1 border-blue-200"
+                    className="w-full h-32 object-contain rounded-full shadow-2xl border-1 border-blue-200"
                     style={{
                         animation: 'float 2s ease-in-out infinite',
                     }}
@@ -107,7 +107,7 @@ const WeatherApp = () => {
                 <img
                     src={myRain}
                     alt="Weather Icon"
-                    className="w-32 h-32 bg-blue-400 object-contain rounded-full shadow-lg"
+                    className="w-full h-32 bg-blue-400 object-contain rounded-full shadow-lg"
                     style={{
                         animation: 'float 2s ease-in-out infinite',
                     }}
@@ -117,7 +117,7 @@ const WeatherApp = () => {
                 <img
                     src={myCloud}
                     alt="Weather Icon"
-                    className="w-32 h-32 bg-blue-400 object-contain rounded-full shadow-lg"
+                    className="w-full h-32 bg-blue-400 object-contain rounded-full shadow-lg"
                     style={{
                         animation: 'float 2s ease-in-out infinite',
                     }}
@@ -127,7 +127,7 @@ const WeatherApp = () => {
                 <img
                     src={mySnow}
                     alt="Weather Icon"
-                    className="w-32 h-32 bg-blue-400 object-contain rounded-full shadow-lg"
+                    className="w-full h-32 bg-blue-400 object-contain rounded-full shadow-lg"
                     style={{
                         animation: 'float 2s ease-in-out infinite',
                     }}
